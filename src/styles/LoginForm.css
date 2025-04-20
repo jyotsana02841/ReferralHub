@@ -1,3 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out; /* General transition for smooth animations */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fc;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in effect for the page */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .login-container {
   display: flex;
   justify-content: center;
@@ -5,32 +24,70 @@
   min-height: 100vh;
   width: 100%;
   background: #f5f7fc;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .login-box {
   background: white;
   border-radius: 10px;
-  padding: 40px;
+  padding: 30px 25px;
   width: 100%;
   max-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   text-align: center;
+  animation: slideUp 1s ease-in-out; /* Form entry animation */
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h2 {
   margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.google-btn, .magic-btn, .login-btn {
+  width: 100%;
+  padding: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
 }
 
 .google-btn {
   background-color: white;
   color: #000;
   border: 1px solid #ccc;
-  width: 100%;
-  padding: 10px;
-  font-weight: 500;
-  border-radius: 6px;
-  margin-bottom: 25px;
-  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.google-btn:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  background-color: #f0f0f0;
+}
+
+.magic-btn, .login-btn {
+  background-color: #a2b5fd;
+  border: none;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.magic-btn:hover, .login-btn:hover {
+  transform: scale(1.05);
+  background-color: #879af7;
 }
 
 .section {
@@ -42,31 +99,42 @@ h2 {
   display: block;
   font-size: 14px;
   margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
 }
 
 .section input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.magic-btn, .login-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #a2b5fd;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
+.section input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 5px rgba(99, 102, 241, 0.5); /* Focus effect */
 }
 
 .options {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 13px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.options a {
+  color: #4a4a4a;
+  text-decoration: none;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.options a:hover {
+  color: #6366f1; /* Hover effect for links */
 }
 
 .or-divider {
@@ -79,6 +147,8 @@ h2 {
   background: white;
   padding: 0 10px;
   color: #999;
+  position: relative;
+  z-index: 1;
 }
 
 .or-divider::before {
@@ -97,13 +167,61 @@ h2 {
   justify-content: center;
   gap: 15px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .social-icons img {
-  width: 30px;
+  width: 28px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* Hover effect for social icons */
 }
 
 .register {
   font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 25px 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .google-btn,
+  .magic-btn,
+  .login-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .section input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .or-divider span {
+    font-size: 13px;
+  }
+
+  .social-icons img {
+    width: 26px;
+  }
+
+  .register {
+    font-size: 13px;
+  }
 }

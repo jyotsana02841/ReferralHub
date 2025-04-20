@@ -2,124 +2,33 @@
 .content-body {
   display: flex;
   gap: 30px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in-out forwards;
 }
 
-/* Get Started Section (reuse or adjust) */
+/* Get Started Section */
 .get-started {
   flex: 1;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transform: translateY(20px);
+  animation: slideIn 0.5s ease-out forwards;
 }
 
-/* Business Profile Form Styles */
-.business-profile-form {
-  flex: 2; /* Adjust flex as needed to control width relative to the left section */
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+.get-started h3,
+.get-started p {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
-.business-profile-form h3 {
-  font-size: 18px;
-  color: #2d3748;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.business-profile-form .form-description {
-  color: #718096;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.business-profile-form .form-group {
-  margin-bottom: 15px;
-}
-
-.business-profile-form label {
-  display: block;
-  font-size: 14px;
-  color: #2d3748;
-  margin-bottom: 5px;
-}
-
-.business-profile-form input[type="text"],
-.business-profile-form input[type="email"],
-.business-profile-form input[type="tel"],
-.business-profile-form select,
-.business-profile-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #cbd5e0;
-  border-radius: 4px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-.business-profile-form textarea {
-  resize: vertical;
-}
-
-.business-profile-form .form-row {
-  display: flex;
-  gap: 20px;
-}
-
-.business-profile-form .form-row .form-group {
-  flex: 1;
-}
-
-.business-profile-form .logo-upload {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.business-profile-form .logo-input button {
-  background-color: transparent;
-  border: 1px solid #4299e1;
-  color: #4299e1;
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.business-profile-form .logo-input button:hover {
-  background-color: #e0f2fe;
-}
-
-/* Navigation Buttons (reuse or adjust) */
-.navigation-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navigation-buttons .next-button {
-  background-color: #4299e1;
-  width: 25rem;
-  display: flex;
-  justify-content: center;
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.navigation-buttons .next-button:hover {
-  background-color: #3182ce;
+.get-started p {
+  animation-delay: 0.3s;
 }
 
 .setup-steps {
+  color: #3182ce;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -136,6 +45,9 @@
   background-color: #f9fafb;
   font-size: 14px;
   color: #2d3748;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
 }
 
 .step.not-started {
@@ -145,7 +57,6 @@
 .circle {
   width: 10px;
   height: 10px;
-  /* background-color: #e53e3e; */
   border-radius: 50%;
   margin-right: 8px;
   display: inline-block;
@@ -156,14 +67,174 @@
   color: #e53e3e;
 }
 
-.form-row {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap; /* prevent wrapping unless necessary */
+.business-profile-form {
+  flex: 2;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transform: translateY(20px);
+  animation: slideIn 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.business-profile-form h3 {
+  font-size: 18px;
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.6s;
+}
+
+.business-profile-form .form-description {
+  color: #718096;
+  font-size: 14px;
   margin-bottom: 20px;
 }
 
-.form-group {
-  flex: 1;
-  min-width: 0; /* prevents overflow */
+.business-profile-form .form-group {
+  margin-bottom: 15px;
+  transform: translateX(-30px);
+  opacity: 0;
+  animation: slideIn 0.4s ease-out forwards;
+}
+
+.business-profile-form input[type="text"],
+.business-profile-form input[type="email"],
+.business-profile-form input[type="tel"],
+.business-profile-form select,
+.business-profile-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.business-profile-form input[type="text"]:focus,
+.business-profile-form input[type="email"]:focus,
+.business-profile-form input[type="tel"]:focus,
+.business-profile-form select:focus,
+.business-profile-form textarea:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 5px rgba(66, 153, 241, 0.3);
+}
+
+.business-profile-form .logo-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.business-profile-form .logo-input button {
+  background-color: transparent;
+  border: 1px solid #4299e1;
+  color: #4299e1;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.business-profile-form .logo-input button:hover {
+  background-color: #e0f2fe;
+  color: #3182ce;
+}
+
+.navigation-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 1.3s;
+}
+
+.navigation-buttons .next-button {
+  background-color: #4299e1;
+  width: 25rem;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation-buttons .next-button:hover {
+  background-color: #3182ce;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-body {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .get-started,
+  .business-profile-form {
+    padding: 15px;
+    box-shadow: none;
+  }
+
+  .business-profile-form h3 {
+    font-size: 16px;
+  }
+
+  .business-profile-form .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+  }
+
+  .navigation-buttons .next-button {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .setup-steps {
+    gap: 8px;
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
 }

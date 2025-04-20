@@ -1,33 +1,68 @@
-/* AiAgentChat.css */
+/* General transition styles */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Main container animation */
 .ai-agent-chat-container {
   display: flex;
   min-height: 100vh;
   background-color: #f7f8fa;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
-/* Sidebar Styles (You might reuse or adjust from the previous example) */
+@media (min-width: 768px) {
+  .ai-agent-chat-container {
+    flex-direction: row;
+  }
+}
+
+/* Sidebar slide in animation */
 .sidebar {
   width: 250px;
   background-color: #ffffff;
   border-right: 1px solid #e0e0e0;
   padding: 20px 0;
-  /* ... other sidebar styles ... */
+  opacity: 0;
+  animation: slideInLeft 0.5s forwards;
 }
 
-/* Main Content Styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    padding: 10px;
+  }
+}
+
+/* Main content fade in */
 .main-content {
   flex-grow: 1;
   padding: 30px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  animation: fadeIn 1s forwards 0.5s;
 }
 
-/* Header Styles */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 15px;
+  }
+}
+
+/* Header fade-in and rise animation */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards 1s;
 }
 
 .header-title {
@@ -42,57 +77,30 @@
   color: #2d3748;
 }
 
-.reset-button {
-  background-color: transparent;
-  border: 1px solid #cbd5e0;
-  color: #718096;
-  padding: 8px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.reset-button:hover {
-  background-color: #e2e8f0;
-  color: #4a5568;
-}
-
-/* Chat Area Styles */
-.chat-area {
-  flex-grow: 1;
-  overflow-y: auto;
-  padding-bottom: 20px;
-}
-
+/* Chat bubble entrance animation */
 .chat-bubble {
   display: flex;
   align-items: flex-start;
   margin-bottom: 15px;
   gap: 10px;
+  opacity: 0;
+  animation: fadeInBubble 0.6s forwards;
+}
+
+.chat-bubble.ai {
+  animation-delay: 0.2s;
 }
 
 .chat-bubble.user {
   flex-direction: row-reverse;
-}
-
-.chat-bubble.user .message {
-  background-color: #e0f2fe;
-  color: #2d3748;
-  border-radius: 8px 8px 0 8px;
-}
-
-.chat-bubble.ai .message {
-  background-color: #f7f8fa;
-  color: #2d3748;
-  border-radius: 0 8px 8px 8px;
+  animation-delay: 0.4s;
 }
 
 .chat-bubble .message {
   padding: 10px 15px;
   font-size: 14px;
   line-height: 1.5;
-  max-width: 70%; /* Adjust as needed */
+  max-width: 70%;
   word-break: break-word;
 }
 
@@ -100,11 +108,13 @@
   justify-content: flex-end;
 }
 
-/* Campaign Summary Styles */
+/* Campaign summary slide-in */
 .campaign-summary {
   list-style: none;
   padding: 0;
   margin: 10px 0;
+  opacity: 0;
+  animation: slideInLeft 0.5s forwards 1.5s;
 }
 
 .campaign-summary li {
@@ -148,11 +158,13 @@
   background-color: #38a169;
 }
 
-/* Input Area Styles */
+/* Input area animation */
 .input-area {
   display: flex;
   margin-top: 20px;
   gap: 10px;
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards 2s;
 }
 
 .input-area input[type="text"] {
@@ -178,13 +190,15 @@
   background-color: #3182ce;
 }
 
-/* Quick Links Styles */
+/* Quick links fade-in */
 .quick-links {
   margin-top: 30px;
   padding: 15px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  animation: fadeIn 1s forwards 2.5s;
 }
 
 .quick-links h3 {
@@ -213,4 +227,62 @@
 .quick-links .links button:hover {
   background-color: #e2e8f0;
   color: #4a5568;
+}
+
+@media (max-width: 768px) {
+  .quick-links {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .quick-links .links {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .quick-links .links button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBubble {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

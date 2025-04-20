@@ -1,79 +1,57 @@
-/* SyncCustomerData.css */
-.platform-setup-container {
-  display: flex;
-  min-height: 100vh;
-  background-color: #f7f8fa;
-}
-
-/* Sidebar Styles (reuse or adjust) */
-.sidebar {
-  width: 250px;
-  background-color: #ffffff;
-  border-right: 1px solid #e0e0e0;
-  padding: 20px 0;
-  /* ... other sidebar styles ... */
-}
-
 /* Main Content Styles */
-.main-content {
-  flex-grow: 1;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Header Styles (reuse or adjust) */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-/* Content Body Styles */
 .content-body {
   display: flex;
   gap: 30px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
 }
 
-/* Get Started Section (reuse or adjust) */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Get Started Section */
 .get-started {
   flex: 1;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease-out forwards; /* Slide-up animation */
 }
 
-.get-started h3 {
-  font-size: 18px;
-  color: #2d3748;
-  margin-top: 0;
-  margin-bottom: 10px;
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+  }
 }
 
-.get-started p {
-  color: #4a5568;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 20px;
+.get-started h3, .get-started p {
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out forwards; /* Fade-in for text */
 }
 
-.setup-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
 }
 
+/* Steps */
 .step {
   display: flex;
   align-items: center;
   color: #4a5568;
   font-size: 14px;
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out forwards; /* Fade-in effect for steps */
 }
 
 .step.completed .checkmark {
-  background-color: #48bb78; /* Green */
+  background-color: #48bb78;
   color: #fff;
   border-radius: 50%;
   width: 20px;
@@ -83,38 +61,17 @@
   align-items: center;
   margin-right: 10px;
   font-size: 12px;
+  transform: scale(1.2); /* Added scale effect */
+  animation: pulse 1s infinite alternate; /* Pulse animation */
 }
 
-.step.in-progress .progress-indicator {
-  border: 2px solid #4299e1; /* Blue */
-  border-top-color: transparent;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.step.not-started .circle {
-  border: 1px solid #a0aec0; /* Gray border */
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-  font-size: 12px;
-}
-
-.step .status {
-  margin-left: auto;
-  font-size: 12px;
-  color: #718096;
+@keyframes pulse {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Import Data Section */
@@ -124,38 +81,15 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
+  opacity: 0;
+  animation: slideIn 0.8s ease-out forwards; /* Slide-in effect */
 }
 
-.import-data h3 {
-  font-size: 18px;
-  color: #2d3748;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.connect-zapier-button {
-  border: 1px solid #667eea; /* Purple-blue */
-  background-color: #fff;
-  color: #667eea;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.2s ease;
-  margin-bottom: 15px;
-}
-
-.connect-zapier-button:hover {
-  background-color: #5a67d8;
-  color: white;
-}
-
-.or-divider {
-  text-align: center;
-  color: #a0aec0;
-  margin-bottom: 15px;
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .upload-csv-section {
@@ -166,6 +100,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out forwards; /* Fade-in for drag and drop area */
 }
 
 .drag-drop-area {
@@ -174,51 +110,17 @@
   align-items: center;
   justify-content: center;
   padding: 30px;
- border: none;
+  border: none;
   text-align: center;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.drag-drop-area svg {
-  width: 40px;
-  height: 40px;
-  color: #a0aec0;
-  margin-bottom: 10px;
+.drag-drop-area:hover {
+  transform: scale(1.05); /* Hover effect */
 }
 
-.drag-drop-area p {
-  color: #718096;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.drag-drop-area .or-text {
-  color: #a0aec0;
-  margin-bottom: 10px;
-}
-
-.drag-drop-area .upload-file-button {
-  background-color: transparent;
-  border: 1px solid #4299e1;
-  color: #4299e1;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.drag-drop-area .upload-file-button:hover {
-  background-color: #e0f2fe;
-}
-
-/* Navigation Buttons (reuse or adjust) */
-.navigation-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: flex-end;
-}
-
+/* Navigation Buttons */
 .navigation-buttons .next-button {
   background-color: #4299e1;
   color: #fff;
@@ -227,9 +129,35 @@
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .navigation-buttons .next-button:hover {
   background-color: #3182ce;
+  transform: translateY(-3px); /* Hover lift effect */
+}
+
+.upload-file-button {
+  background-color: #3182ce;
+  border: none;
+  color: white;
+  padding: 7px;
+  border-radius: 7px;
+}
+
+.upload-file-button:hover {
+  transform: scale(1.05);
+}
+
+.connect-zapier-button {
+  background-color: #3182ce;
+  border: none;
+  color: white;
+  padding: 7px;
+  border-radius: 7px;
+  margin-top: 5px;
+}
+
+.connect-zapier-button:hover {
+  transform: scale(1.05);
 }

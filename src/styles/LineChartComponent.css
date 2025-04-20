@@ -19,3 +19,41 @@
   left: 100px;  /* Adjust based on where you want the label */
   transform: translate(-50%, -50%);
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .chart-container {
+    width: 90%; /* Reduce width for tablets or smaller screens */
+    height: auto; /* Let height adjust automatically */
+  }
+
+  .custom-label {
+    top: 40px;  /* Adjust label position */
+    left: 80px;  /* Adjust label position */
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    width: 80%; /* Further reduce width for smaller screens */
+  }
+
+  .custom-label {
+    top: 30px;  /* Adjust label position */
+    left: 70px;  /* Adjust label position */
+    font-size: 10px; /* Smaller font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    width: 100%; /* Full width for very small screens */
+  }
+
+  .custom-label {
+    top: 20px;  /* Further adjust label position */
+    left: 50px;  /* Adjust label position */
+    font-size: 8px; /* Even smaller font size for very small screens */
+  }
+}

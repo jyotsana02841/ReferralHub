@@ -1,92 +1,38 @@
-/* SetAiAgentRules.css */
-.platform-setup-container {
-  display: flex;
-  min-height: 100vh;
-  background-color: #f7f8fa;
-}
-
-/* Sidebar Styles (reuse or adjust) */
-.sidebar {
-  width: 250px;
-  background-color: #ffffff;
-  border-right: 1px solid #e0e0e0;
-  padding: 20px 0;
-  /* ... other sidebar styles ... */
-}
-
-/* Main Content Styles */
-.main-content {
-  flex-grow: 1;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Header Styles (reuse or adjust) */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-/* Content Body Styles */
+/* Content Body Animations */
 .content-body {
   display: flex;
   gap: 30px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in-out forwards;
 }
 
-/* Get Started Section (reuse or adjust) */
-.get-started {
-  flex: 1;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.get-started h3 {
-  font-size: 18px;
-  color: #2d3748;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.get-started p {
-  color: #4a5568;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.setup-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
+/* Step Status Transitions */
 .step {
   display: flex;
   align-items: center;
   color: #4a5568;
   font-size: 14px;
+  transition: all 0.3s ease;
 }
 
-.step.completed .checkmark {
-  background-color: #48bb78; /* Green */
-  color: #fff;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-  font-size: 12px;
+.step:hover {
+  transform: scale(1.05);
+  background-color: #edf2f7;
+  border-radius: 4px;
 }
 
+/* Progress Indicator Animation */
 .step.in-progress .progress-indicator {
-  border: 2px solid #4299e1; /* Blue */
+  border: 2px solid #4299e1;
   border-top-color: transparent;
   border-radius: 50%;
   width: 20px;
@@ -96,160 +42,37 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.step.not-started .circle {
-  border: 1px solid #a0aec0; /* Gray border */
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-  font-size: 12px;
+/* Form Inputs and Select Animations */
+.ai-rules-setup select,
+.ai-rules-setup input[type="checkbox"] {
+  transition: all 0.3s ease;
 }
 
-.step .status {
-  margin-left: auto;
-  font-size: 12px;
-  color: #718096;
+.ai-rules-setup select:focus,
+.ai-rules-setup input[type="checkbox"]:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 4px rgba(66, 153, 225, 0.8);
 }
 
-/* AI Rules Setup Section */
-.ai-rules-setup {
-  flex: 1;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-}
-
-.ai-rules-setup h2 {
-  font-size: 18px;
-  color: #2d3748;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.ai-rules-setup .form-group {
-  margin-bottom: 20px;
-}
-
-.ai-rules-setup label {
-  display: block;
-  font-size: 14px;
-  color: #2d3748;
-  margin-bottom: 5px;
-}
-
-.ai-rules-setup select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #cbd5e0;
-  border-radius: 4px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-.ai-rules-setup .options-hint {
-  display: flex;
-  gap: 10px;
-  margin-top: 5px;
-  color: #718096;
-  font-size: 12px;
-}
-
-.ai-rules-setup .options-hint .option {
-  padding: 5px 8px;
-  border-radius: 4px;
-  background-color: #f7f8fa;
-  border: 1px solid #e0e0e0;
-}
-
-/* Switch Control Styles */
-.ai-rules-setup .switch-control {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.wrap {
-  display: flex;
-  justify-content: space-between;
-}
-
-.ai-rules-setup .switch-control label {
-  margin-bottom: 0;
-}
-
-.ai-rules-setup .switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-}
-
-.ai-rules-setup .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
+/* Switch Control Transitions */
 .ai-rules-setup .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 20px;
-}
-
-.ai-rules-setup .slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .ai-rules-setup input:checked + .slider {
-  background-color: #2196F3;
-}
-
-.ai-rules-setup input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  background-color: #48bb78;
 }
 
 .ai-rules-setup input:checked + .slider:before {
   transform: translateX(20px);
 }
 
-.ai-rules-setup .switch-control .switch-description {
-  flex-grow: 1;
-  margin-left: 15px;
-  color: #718096;
-  font-size: 12px;
-  display: block;
-}
-
-/* Navigation Buttons (reuse or adjust) */
-.navigation-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: flex-end;
-}
-
+/* Button Animations */
 .navigation-buttons .next-button {
   background-color: #4299e1;
   color: #fff;
@@ -258,9 +81,53 @@
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.3s ease;
 }
 
 .navigation-buttons .next-button:hover {
   background-color: #3182ce;
+  transform: translateY(-2px);
+}
+
+.navigation-buttons .next-button:active {
+  transform: translateY(2px);
+}
+
+/* Hover Effect for Switch Labels */
+.ai-rules-setup .switch-control label:hover {
+  color: #4299e1;
+  transition: color 0.3s ease;
+}
+
+/* Add an animation for the sidebar when the page loads */
+.sidebar {
+  opacity: 0;
+  animation: sidebarFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes sidebarFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Add animation to the header */
+.header {
+  transform: translateY(-20px);
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

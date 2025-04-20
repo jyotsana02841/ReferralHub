@@ -235,3 +235,120 @@
 .new-promoters-container .navigation-buttons .save-button:hover {
   background-color: #38a169;
 }
+
+/* Responsive Styles */
+
+/* Mobile (Small devices: 320px and up) */
+@media (max-width: 600px) {
+  .new-promoters-container .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .new-promoters-container .header h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .new-promoters-container .top-navigation-tabs {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .new-promoters-container .top-navigation-tabs .tab {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .new-promoters-container .leads-settings-section {
+    padding: 20px;
+  }
+
+  .new-promoters-container .leads-settings-section h2 {
+    font-size: 18px;
+  }
+
+  .new-promoters-container .leads-settings-section .form-section {
+    margin-bottom: 20px;
+  }
+
+  .new-promoters-container .leads-settings-section .followup-options {
+    gap: 10px;
+  }
+
+  .new-promoters-container .leads-settings-section .followup-item {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .new-promoters-container .leads-settings-section .add-followup-strategy {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .new-promoters-container .navigation-buttons {
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+
+  .new-promoters-container .navigation-buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Tablet (Medium devices: 600px to 1024px) */
+@media (max-width: 1024px) {
+  .new-promoters-container .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .new-promoters-container .top-navigation-tabs {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .new-promoters-container .top-navigation-tabs .tab {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .new-promoters-container .leads-settings-section {
+    padding: 25px;
+  }
+
+  .new-promoters-container .leads-settings-section .followup-item {
+    font-size: 15px;
+  }
+
+  .new-promoters-container .navigation-buttons {
+    gap: 15px;
+  }
+}
+
+/* Desktop (Large devices: 1024px and up) */
+@media (min-width: 1025px) {
+  .new-promoters-container {
+    padding: 30px;
+  }
+
+  .new-promoters-container .header h2 {
+    font-size: 26px;
+  }
+
+  .new-promoters-container .top-navigation-tabs .tab {
+    padding: 14px 28px;
+  }
+
+  .new-promoters-container .leads-settings-section {
+    padding: 30px;
+  }
+
+  .new-promoters-container .navigation-buttons {
+    justify-content: flex-end;
+  }
+}

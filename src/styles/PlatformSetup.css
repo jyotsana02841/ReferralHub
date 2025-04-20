@@ -2,19 +2,19 @@
 
 .platform-setup-container {
   display: flex;
-  min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+  min-height: 100vh;
   background-color: #f4f6f8; /* Light background for the whole page */
 }
 
 /* Sidebar Styles */
 .sidebar {
-  width: 250px; /* Adjust as needed */
-  background-color: #fff; /* White sidebar background */
+  width: 250px;
+  background-color: #fff;
   border-right: 1px solid #e0e0e0;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Push bottom items to the bottom */
+  justify-content: space-between;
 }
 
 .sidebar-item {
@@ -27,8 +27,8 @@
 }
 
 .sidebar-item.active {
-  background-color: #e3f2fd; /* Light blue for active item */
-  color: #1976d2; /* Blue for active text */
+  background-color: #e3f2fd;
+  color: #1976d2;
   font-weight: bold;
 }
 
@@ -43,7 +43,7 @@
 
 /* Header Styles */
 .main-content {
-  flex-grow: 1; /* Take up remaining space */
+  flex-grow: 1;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -74,7 +74,7 @@
 .avatar {
   width: 40px;
   height: 40px;
-  background-color: #9e9e9e; /* Grey placeholder */
+  background-color: #9e9e9e;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -98,11 +98,125 @@
 
 /* Content Body Styles */
 .content-body {
-  flex-grow: 1; /* Let the content body take the remaining vertical space */
+  flex-grow: 1;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 
-/* You might need to add more specific styles for the content of each page (e.g., DashboardPage, AIAgentPage, etc.) in their respective CSS files. */
+/* Platform Setup Step Styling */
+.step-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.step-container h3 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+  color: #333;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .platform-setup-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+    justify-content: flex-start;
+  }
+
+  .sidebar-item {
+    flex: 1 1 45%;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.95em;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .main-content {
+    padding: 15px 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  .header h2 {
+    font-size: 1.2em;
+  }
+
+  .user-info {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9em;
+    margin-right: 8px;
+  }
+
+  .user-details {
+    font-size: 0.85em;
+  }
+
+  .content-body {
+    padding: 15px;
+  }
+
+  /* Adjusting specific sidebar links for mobile */
+  .sidebar-item {
+    padding: 10px;
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  /* Modify active link for smaller screens */
+  .sidebar-item.active {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    font-weight: bold;
+  }
+
+  /* Header adjustments for mobile */
+  .user-info {
+    flex-direction: column;
+  }
+
+  .step-container {
+    padding: 15px;
+    font-size: 0.95em;
+  }
+}
+
+/* Scrollbar for content if too much */
+.content-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.content-body::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}

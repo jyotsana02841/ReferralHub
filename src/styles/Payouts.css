@@ -1,12 +1,29 @@
+/* Payouts Page Styling */
 .payouts-page {
   padding: 2rem;
   font-family: sans-serif;
+  animation: fadeIn 0.6s ease;
 }
 
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Summary Section */
 .summary {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .summary .card {
@@ -15,12 +32,22 @@
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.summary .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Tabs Styling */
 .tabs {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .tabs button {
@@ -29,6 +56,11 @@
   background: #e5e7eb;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tabs button:hover {
+  background: #d1d5db;
 }
 
 .tabs button.active {
@@ -36,22 +68,48 @@
   color: white;
 }
 
+/* Payouts Table */
 .payouts-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 2rem;
+  animation: fadeInTable 0.5s ease;
 }
 
-.payouts-table th, .payouts-table td {
+@keyframes fadeInTable {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.payouts-table th,
+.payouts-table td {
   padding: 0.75rem;
   border-bottom: 1px solid #e5e7eb;
   text-align: left;
+  transition: background 0.2s ease;
 }
 
+.payouts-table tr:hover td {
+  background-color: #f3f4f6;
+}
+
+/* Status Styles */
 .status {
   padding: 0.25rem 0.5rem;
   border-radius: 5px;
   font-size: 0.85rem;
   font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.status:hover {
+  transform: scale(1.05);
 }
 
 .status-paid {
@@ -64,10 +122,92 @@
   color: #92400e;
 }
 
+/* Link Button */
 button.link {
   background: none;
   color: #6366f1;
   border: none;
   cursor: pointer;
   margin-left: 1rem;
+  transition: color 0.2s ease;
+}
+
+button.link:hover {
+  color: #4338ca;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .summary {
+    flex-direction: column;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .payouts-table th,
+  .payouts-table td {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .summary {
+    flex-direction: column;
+  }
+
+  .summary .card {
+    min-width: auto;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+  }
+
+  .payouts-table {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  .status {
+    font-size: 0.75rem;
+  }
+
+  button.link {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .payouts-page {
+    padding: 1rem;
+  }
+
+  .summary {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .payouts-table {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  .status {
+    font-size: 0.7rem;
+  }
 }
