@@ -3,18 +3,17 @@
 .platform-setup-container {
   display: flex;
   min-height: 100vh;
-  background-color: #f4f6f8; /* Light background for the whole page */
+  background-color: #f4f6f8;
+  overflow-x: hidden;
 }
 
 /* Sidebar Styles */
 .sidebar {
-  width: 250px;
+  z-index: 10;
+  padding: 20px;
+  min-width: 180px;
   background-color: #fff;
   border-right: 1px solid #e0e0e0;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .sidebar-item {
@@ -41,12 +40,13 @@
   border-top: 1px solid #e0e0e0;
 }
 
-/* Header Styles */
+/* Header & Main Content */
 .main-content {
   flex-grow: 1;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .header {
@@ -56,7 +56,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
   border-radius: 5px;
 }
 
@@ -96,13 +95,15 @@
   color: #333;
 }
 
-/* Content Body Styles */
+/* Content Body */
 .content-body {
   flex-grow: 1;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  min-height: 400px;
 }
 
 /* Platform Setup Step Styling */
@@ -119,7 +120,21 @@
   color: #333;
 }
 
-/* Media Queries for Mobile Responsiveness */
+/* Scrollbar for content */
+.content-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.content-body::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .platform-setup-container {
     flex-direction: column;
@@ -127,12 +142,12 @@
 
   .sidebar {
     width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
     border-right: none;
     border-bottom: 1px solid #e0e0e0;
     padding: 10px;
-    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .sidebar-item {
@@ -182,41 +197,8 @@
     padding: 15px;
   }
 
-  /* Adjusting specific sidebar links for mobile */
-  .sidebar-item {
-    padding: 10px;
-    font-size: 0.9em;
-    text-align: center;
-  }
-
-  /* Modify active link for smaller screens */
-  .sidebar-item.active {
-    background-color: #e3f2fd;
-    color: #1976d2;
-    font-weight: bold;
-  }
-
-  /* Header adjustments for mobile */
-  .user-info {
-    flex-direction: column;
-  }
-
   .step-container {
     padding: 15px;
     font-size: 0.95em;
   }
-}
-
-/* Scrollbar for content if too much */
-.content-body::-webkit-scrollbar {
-  width: 8px;
-}
-
-.content-body::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 10px;
-}
-
-.content-body::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
 }

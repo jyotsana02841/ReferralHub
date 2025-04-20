@@ -14,13 +14,14 @@ import LeadsDashboard from "./LeadsDashboard.jsx";
 import Login from "./LoginForm.jsx";
 import Register from "./RegisterForm.jsx";
 import AssistantLoginOptions from "./AssistantLoginOptions.jsx";
-
+import PlatformSetupContent from "./PlatformSetupContent.jsx";
 import "./../styles/PlatformSetup.css";
 
 function PlatformSetup() {
   const [activePage, setActivePage] = useState("Login"); // Start with Login page
 
   const handleSidebarClick = (pageName) => {
+    console.log("Clicked:", pageName);
     setActivePage(pageName);
   };
 
@@ -30,8 +31,8 @@ function PlatformSetup() {
         return <Login onSwitchToRegister={() => setActivePage("Register")} />;
       case "Register":
         return <Register onSwitchToLogin={() => setActivePage("Login")} />;
-      case "Platform Setup":
-        return <PlatformSetupContent />;
+        case "Platform Setup":
+          return <PlatformSetupContent />;
       case "AI Agent":
         return <ChatPage />;
       case "Dashboard":
@@ -55,30 +56,6 @@ function PlatformSetup() {
     }
   };
 
-  const PlatformSetupContent = () => {
-    const [step, setStep] = useState(1);
-
-    const handleNext = () => {
-      setStep((prev) => prev + 1);
-    };
-
-    const renderStep = () => {
-      switch (step) {
-        case 1:
-          return <PlatformSetup1 onNext={handleNext} />;
-        case 2:
-          return <PlatformSetup2 onNext={handleNext} />;
-        case 3:
-          return <PlatformSetup3 onNext={handleNext} />;
-        case 4:
-          return <PlatformSetup4 />;
-        default:
-          return null;
-      }
-    };
-
-    return <div className="content-body">{renderStep()}</div>;
-  };
 
   return (
     <div className="platform-setup-container">
@@ -194,7 +171,7 @@ function PlatformSetup() {
         )}
 
         {/* Page Content */}
-        <div className="content-body">{renderPage()}</div>
+        {renderPage()}
       </div>
     </div>
   );

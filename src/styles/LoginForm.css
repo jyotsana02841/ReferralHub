@@ -186,6 +186,18 @@ h2 {
   margin-top: 10px;
 }
 
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+
 @media (max-width: 480px) {
   .login-box {
     padding: 25px 15px;
