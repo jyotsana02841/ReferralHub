@@ -1,0 +1,21 @@
+/* LineChartComponent.css */
+
+/* Styling for the chart container */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Styling for the chart label */
+.custom-label {
+  font-size: 14px;
+  font-weight: bold;
+  fill: #000;
+  position: absolute;
+  top: 50px;  /* Adjust based on where you want the label */
+  left: 100px;  /* Adjust based on where you want the label */
+  transform: translate(-50%, -50%);
+}

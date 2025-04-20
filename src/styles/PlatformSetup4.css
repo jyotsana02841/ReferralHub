@@ -1,0 +1,229 @@
+/* CreateNewCampaignDetailed.css */
+.platform-setup-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f7f8fa;
+}
+
+/* Sidebar Styles (reuse or adjust) */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px 0;
+  /* ... other sidebar styles ... */
+}
+
+/* Main Content Styles */
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles (reuse or adjust) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Content Body Styles */
+.content-body {
+  display: flex;
+  gap: 30px;
+}
+
+/* Get Started Section (reuse or adjust) */
+.get-started {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Create New Campaign Form Styles */
+.create-campaign-form-detailed {
+  flex: 2; /* Adjust flex as needed */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.create-campaign-form-detailed h2 {
+  font-size: 18px;
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.create-campaign-form-detailed .form-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.create-campaign-form-detailed .form-section:last-child {
+  border-bottom: none;
+}
+
+.create-campaign-form-detailed h3 {
+  font-size: 16px;
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.create-campaign-form-detailed .form-group {
+  margin-bottom: 15px;
+}
+
+.create-campaign-form-detailed label {
+  display: block;
+  font-size: 14px;
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+.create-campaign-form-detailed input[type="text"],
+.create-campaign-form-detailed input[type="number"],
+.create-campaign-form-detailed select,
+.create-campaign-form-detailed textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.create-campaign-form-detailed .reward-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.create-campaign-form-detailed .reward-inputs {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.create-campaign-form-detailed .reward-inputs input[type="number"] {
+  width: 80px;
+}
+
+.create-campaign-form-detailed .reward-inputs select {
+  width: auto;
+}
+
+.create-campaign-form-detailed .on-next-purchase,
+.create-campaign-form-detailed .off-first-order {
+  color: #718096;
+  font-size: 12px;
+}
+
+.create-campaign-form-detailed .followup-card {
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.create-campaign-form-detailed .checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.create-campaign-form-detailed .checkbox-label input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.create-campaign-form-detailed .followup-details {
+  padding-left: 30px;
+}
+
+.create-campaign-form-detailed .followup-details .form-group {
+  margin-bottom: 10px;
+}
+
+.create-campaign-form-detailed .followup-details label {
+  font-size: 12px;
+}
+
+.create-campaign-form-detailed .add-followup-button {
+  background-color: transparent;
+  color: #4299e1;
+  border: 1px solid #4299e1;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-top: 10px;
+}
+
+.create-campaign-form-detailed .add-followup-button:hover {
+  background-color: #e0f2fe;
+}
+
+.create-campaign-form-detailed .form-fields-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.create-campaign-form-detailed .form-fields-checkboxes .checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.create-campaign-form-detailed .form-fields-checkboxes input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.navigation-buttons button {
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.navigation-buttons .cancel-button {
+  background-color: transparent;
+  color: #718096;
+  border: 1px solid #cbd5e0;
+}
+
+.navigation-buttons .cancel-button:hover {
+  background-color: #e2e8f0;
+}
+
+.navigation-buttons .create-campaign-button {
+  background-color: #48bb78;
+  color: #fff;
+  border: none;
+}
+
+.navigation-buttons .create-campaign-button:hover {
+  background-color: #38a169;
+}

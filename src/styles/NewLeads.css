@@ -1,0 +1,237 @@
+/* ./styles/NewPromoters.css */
+.new-promoters-container {
+  padding: 20px;
+  background-color: #f7f8fa;
+  min-height: 100vh;
+}
+
+.new-promoters-container .main-content {
+  flex-grow: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.new-promoters-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.new-promoters-container .header h2 {
+  font-size: 24px;
+  color: #2d3748;
+  margin: 0;
+}
+
+.new-promoters-container .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.new-promoters-container .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #cbd5e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #718096;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.new-promoters-container .user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.new-promoters-container .user-name {
+  font-size: 18px;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.new-promoters-container .user-email {
+  font-size: 14px;
+  color: #718096;
+}
+
+/* Top Navigation Tabs */
+.new-promoters-container .top-navigation-tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.new-promoters-container .top-navigation-tabs .tab {
+  background-color: #f0f0f0;
+  color: #4a5568;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-right: 10px;
+  outline: none;
+}
+
+.new-promoters-container .top-navigation-tabs .tab.active {
+  background-color: #fff;
+  color: #2d3748;
+  border-bottom: 2px solid #4299e1;
+  font-weight: 600;
+}
+
+.new-promoters-container .top-navigation-tabs .tab:hover {
+  background-color: #e0e0e0;
+}
+
+/* Leads Settings Section */
+.new-promoters-container .leads-settings-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.new-promoters-container .leads-settings-section h2 {
+  font-size: 20px;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+.new-promoters-container .leads-settings-section .form-section {
+  margin-bottom: 30px;
+}
+
+.new-promoters-container .leads-settings-section h3 {
+  font-size: 18px;
+  color: #2d3748;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.new-promoters-container .leads-settings-section .followup-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.new-promoters-container .leads-settings-section .followup-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Added for spacing */
+  gap: 20px;
+  font-size: 16px;
+  color: #4a5568;
+  padding: 15px; /* Added padding for each item */
+  background-color: #f7fafc; /* Light background for items */
+  border-radius: 8px; /* Rounded corners for items */
+  border: 1px solid #edf2f7; /* Light border */
+}
+
+.new-promoters-container .leads-settings-section .followup-item span {
+  /* width: 30%;  Adjust as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.new-promoters-container .leads-settings-section .followup-item .days {
+  color: #718096;
+}
+
+.new-promoters-container .leads-settings-section .followup-item button {
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: none;
+  background-color: transparent;
+  display: flex; /* Use flexbox for the button */
+  align-items: center;  /* Vertically center icon */
+  justify-content: center; /* Horizontally center icon */
+}
+
+.new-promoters-container .leads-settings-section .followup-item button:hover {
+  background-color: #e2e8f0;
+}
+
+.new-promoters-container .leads-settings-section .followup-item .edit-followup {
+  color: #4299e1;
+}
+
+.new-promoters-container .leads-settings-section .followup-item .edit-followup:hover {
+  background-color: #e6f0ff;
+}
+
+.new-promoters-container .leads-settings-section .followup-item .delete-followup {
+  color: #e53e3e;
+}
+
+.new-promoters-container .leads-settings-section .followup-item .delete-followup:hover {
+  background-color: #fdeded;
+}
+
+.new-promoters-container .leads-settings-section .followup-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+.new-promoters-container .leads-settings-section .add-followup-strategy {
+  margin-top: 20px;
+  background-color: #48bb78;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+  outline: none;
+}
+
+.new-promoters-container .leads-settings-section .add-followup-strategy:hover {
+  background-color: #38a169;
+}
+
+/* No changes to navigation buttons, but if you had them on this page */
+.new-promoters-container .navigation-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.new-promoters-container .navigation-buttons button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+  outline: none;
+  border: none;
+}
+
+.new-promoters-container .navigation-buttons .cancel-button {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.new-promoters-container .navigation-buttons .cancel-button:hover {
+  background-color: #cbd5e0;
+}
+
+.new-promoters-container .navigation-buttons .save-button {
+  background-color: #48bb78;
+  color: #fff;
+}
+
+.new-promoters-container .navigation-buttons .save-button:hover {
+  background-color: #38a169;
+}

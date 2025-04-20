@@ -1,0 +1,271 @@
+.new-promoters-container {
+  width: 95%;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.tab.active {
+  border-bottom: 3px solid #4285f4;
+  color: #4285f4;
+}
+
+.tab.inactive {
+  color: #888;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+textarea {
+  resize: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.reward-type {
+  display: flex;
+  flex-direction: column;
+}
+
+.reward-type button {
+  background-color: #f0f5ff;
+  border: 1px solid #a3c0ff;
+  color: #3366ff;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: default;
+}
+
+.note {
+  font-size: 12px;
+  color: #666;
+  margin-top: 6px;
+}
+
+.required {
+  color: red;
+  margin-left: 2px;
+}
+
+.followup-section {
+  margin-top: 40px;
+}
+
+.followup-label {
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+  font-size: 15px;
+  color: #333;
+}
+
+.followup-list {
+  background: #f9fbff;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.followup-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #dfe9f3;
+  border-left: 4px solid #60a5fa;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.followup-item.sms {
+  border-left-color: #34d399;
+  /* green */
+}
+
+.followup-item.email {
+  border-left-color: #6366f1;
+  /* blue */
+}
+
+.followup-item.wait {
+  border-left-color: #fbbf24;
+  /* amber */
+}
+
+.followup-icon {
+  margin-right: 10px;
+}
+
+.followup-text {
+  flex: 1;
+}
+
+.followup-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.edit-btn {
+  color: #4b5563;
+}
+
+.delete-btn {
+  color: #ef4444;
+}
+
+.landing-preview-section {
+  margin-top: 40px;
+}
+
+.preview-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.preview-card {
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fafcff, #fdfdfd);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-tab {
+  margin-right: 16px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.nav-tab.active {
+  background-color: #f1f5f9;
+  color: #1e3a8a;
+}
+
+.nav-icons .icon {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.preview-content {
+  text-align: center;
+}
+
+.brand-name {
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+.sub-text {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0 20px;
+}
+
+.referral-highlight {
+  background: #e0f2fe;
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: #0284c7;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #6366f1;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.avatars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 2px solid white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-button {
+  margin-top: 20px;
+  background-color: #e0e7ff;
+  border: none;
+  padding: 10px 24px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #4f46e5;
+}

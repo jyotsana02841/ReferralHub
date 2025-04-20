@@ -1,0 +1,30 @@
+/* SlidingCircleToggle.css */
+.toggle-container {
+  width: 48px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 26px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.toggle-container.right {
+  background-color: #4caf50;
+}
+
+.toggle-circle {
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.3s ease;
+}
+
+.toggle-container.right .toggle-circle {
+  left: 24px;
+}

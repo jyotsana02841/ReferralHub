@@ -1,0 +1,235 @@
+/* SyncCustomerData.css */
+.platform-setup-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f7f8fa;
+}
+
+/* Sidebar Styles (reuse or adjust) */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px 0;
+  /* ... other sidebar styles ... */
+}
+
+/* Main Content Styles */
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles (reuse or adjust) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Content Body Styles */
+.content-body {
+  display: flex;
+  gap: 30px;
+}
+
+/* Get Started Section (reuse or adjust) */
+.get-started {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.get-started h3 {
+  font-size: 18px;
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.get-started p {
+  color: #4a5568;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.setup-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.step.completed .checkmark {
+  background-color: #48bb78; /* Green */
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.step.in-progress .progress-indicator {
+  border: 2px solid #4299e1; /* Blue */
+  border-top-color: transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.step.not-started .circle {
+  border: 1px solid #a0aec0; /* Gray border */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.step .status {
+  margin-left: auto;
+  font-size: 12px;
+  color: #718096;
+}
+
+/* Import Data Section */
+.import-data {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.import-data h3 {
+  font-size: 18px;
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.connect-zapier-button {
+  border: 1px solid #667eea; /* Purple-blue */
+  background-color: #fff;
+  color: #667eea;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  margin-bottom: 15px;
+}
+
+.connect-zapier-button:hover {
+  background-color: #5a67d8;
+  color: white;
+}
+
+.or-divider {
+  text-align: center;
+  color: #a0aec0;
+  margin-bottom: 15px;
+}
+
+.upload-csv-section {
+  border: 2px dashed #cbd5e0;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.drag-drop-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+ border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.drag-drop-area svg {
+  width: 40px;
+  height: 40px;
+  color: #a0aec0;
+  margin-bottom: 10px;
+}
+
+.drag-drop-area p {
+  color: #718096;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.drag-drop-area .or-text {
+  color: #a0aec0;
+  margin-bottom: 10px;
+}
+
+.drag-drop-area .upload-file-button {
+  background-color: transparent;
+  border: 1px solid #4299e1;
+  color: #4299e1;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.drag-drop-area .upload-file-button:hover {
+  background-color: #e0f2fe;
+}
+
+/* Navigation Buttons (reuse or adjust) */
+.navigation-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navigation-buttons .next-button {
+  background-color: #4299e1;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.navigation-buttons .next-button:hover {
+  background-color: #3182ce;
+}
