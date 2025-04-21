@@ -34,18 +34,7 @@ function NewLeads() {
     <div className="new-promoters-container">
       {/* Main Content Area */}
       <div className="main-content">
-        {/* Header */}
-        <div className="header">
-          <h2>Create & Manage Referral Campaigns</h2>
-          <div className="user-info">
-            <div className="avatar">KS</div>
-            <div className="user-details">
-              <div className="user-name">Kadlin Stanton</div>
-              <div className="user-email">kadlinstanton@gmail.com</div>
-            </div>
-          </div>
-        </div>
-
+        
         {/* Top Navigation Tabs */}
         <div className="top-navigation-tabs">
           <button className="tab">Past Promoters</button>

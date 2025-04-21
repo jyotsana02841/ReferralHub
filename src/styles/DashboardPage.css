@@ -331,3 +331,91 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Add Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add Animation to Dashboard Container */
+.dashboard-container {
+  padding: 20px;
+  background-color: #f4f6f8;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: content-box;
+  animation: fadeIn 1s ease-out; /* Apply fade-in effect */
+}
+
+/* Add Animation to KPI Cards */
+.kpi-card,
+.indicator-card,
+.chart-card,
+.recent-activities-container,
+.leaderboard-container {
+  animation: fadeIn 1.5s ease-out; /* Apply fade-in effect */
+}
+
+.kpi-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 200px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Apply delay to stagger the animation */
+.kpi-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.kpi-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.kpi-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.kpi-card:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+/* Indicator Cards */
+.indicator-card {
+  animation: fadeIn 1.5s ease-out;
+  animation-delay: 0.4s;
+}
+
+/* Recent Activities */
+.recent-activities-container {
+  animation: fadeIn 1.5s ease-out;
+  animation-delay: 0.8s;
+}
+
+/* Leaderboard */
+.leaderboard-container {
+  animation: fadeIn 1.5s ease-out;
+  animation-delay: 1s;
+}
+
+/* Charts */
+.chart-card {
+  animation: fadeIn 1.5s ease-out;
+  animation-delay: 1.2s;
+}

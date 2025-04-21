@@ -111,3 +111,107 @@ table tbody tr:hover {
   box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
   outline: none;
 }
+
+/* Animating Table Header */
+table thead th {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+table thead th:nth-child(1) { animation-delay: 0.2s; }
+table thead th:nth-child(2) { animation-delay: 0.4s; }
+table thead th:nth-child(3) { animation-delay: 0.6s; }
+
+/* Animating Table Rows */
+table tbody tr {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+table tbody tr:nth-child(odd) { animation-delay: 0.3s; }
+table tbody tr:nth-child(even) { animation-delay: 0.5s; }
+
+/* Sidebar Transition */
+.sidebar {
+  transition: transform 0.3s ease;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar.closed {
+  transform: translateX(-250px);
+}
+
+/* Menu Item Hover Animation */
+.sidebar .menu-item:hover {
+  background-color: #dceeff;
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* Hover Effect for Links */
+a:hover {
+  color: #1976d2;
+  text-decoration: underline;
+}
+
+/* Focused Input Animation */
+input:focus,
+select:focus {
+  box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+  border-color: #1a73e8;
+}
+
+/* Animating Dashboard Container */
+.dashboard-container {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* Staggered Animation for Sidebar */
+.sidebar {
+  opacity: 0;
+  animation: slideInLeft 0.5s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+/* Staggered Animation for Content */
+.content {
+  opacity: 0;
+  animation: slideInUp 0.8s ease-in-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* Menu Item Hover Effects */
+.sidebar nav button:hover {
+  background-color: #eef3fb;
+  color: #1a73e8;
+  transform: scale(1.05);
+  animation: pulse 0.3s ease;
+}
+
+/* Staggered Fade-in for Cards */
+.card {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+/* Focused Input for Filter Bar */
+.filter-bar input:focus,
+.filter-bar select:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+  outline: none;
+}
+
+/* Smooth Transition for Buttons */
+.primary-btn, .secondary-btn, .filter-btn {
+  transition: all 0.3s ease;
+}

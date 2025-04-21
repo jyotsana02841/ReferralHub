@@ -1,10 +1,10 @@
-/* Base styles remain unchanged... */
-
 /* Campaign List Header */
 .campaign-list-header {
   color: #718096;
-  font-size: 14px; /* Increased font-size for better readability */
+  font-size: 14px;
   margin-bottom: 16px;
+  text-align: center; /* Center the text */
+  font-weight: 500;
 }
 
 /* Campaign Grid */
@@ -12,7 +12,7 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: space-between; /* Ensures that items are spaced out evenly */
+  justify-content: center; /* Center the items horizontally */
 }
 
 /* Campaign Card */
@@ -24,6 +24,9 @@
   width: calc(33.333% - 20px); /* 3 cards per row with spacing */
   position: relative;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .status-badge {
@@ -278,4 +281,15 @@
   .icon-btn {
     font-size: 16px;
   }
+}
+
+/* Campaign Card */
+.campaign-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  width: calc(50% - 20px); /* 2 cards per row */
+  position: relative;
+  margin-bottom: 20px;
 }
