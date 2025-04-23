@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"; // Dummy API call
 import "./../styles/RegisterForm.css";
 
@@ -12,6 +12,7 @@ const RegisterForm = () => {
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -38,18 +39,18 @@ const RegisterForm = () => {
     }
 
     try {
-      // Dummy API call
-      const response = await axios.post("https://dummyapi.io/register", {
+      // ✅ axios is here — after validation
+      const response = await axios.post("http://localhost:5000/users", {
         email,
         password,
       });
 
-      // Simulate success (fake success response)
-      console.log("Registration successful:", response.data);
+      console.log("User registered:", response.data);
       setSuccess("Registered successfully!");
+      navigate("/");
     } catch (err) {
       console.error("Registration failed:", err);
-      setError("Something went wrong. Try again later.");
+      setError("Something went wrong. Try again.");
     }
   };
 
@@ -86,19 +87,37 @@ const RegisterForm = () => {
             onChange={handleChange}
           />
 
-          <button type="submit" className="register-btn">Register</button>
+          <button type="submit" className="register-btn">
+            Register
+          </button>
         </form>
 
         {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
-        {success && <p style={{ color: "green", marginTop: "10px" }}>{success}</p>}
+        {success && (
+          <p style={{ color: "green", marginTop: "10px" }}>{success}</p>
+        )}
 
-        <div className="or-divider"><span>or</span></div>
+        <div className="or-divider">
+          <span>or</span>
+        </div>
 
         <div className="social-icons">
-          <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" />
-          <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook" />
-          <img src="https://img.icons8.com/ios-filled/50/mac-os.png" alt="Mac" />
-          <img src="https://img.icons8.com/ios-filled/50/linkedin.png" alt="LinkedIn" />
+          <img
+            src="https://img.icons8.com/color/48/google-logo.png"
+            alt="Google"
+          />
+          <img
+            src="https://img.icons8.com/color/48/facebook-new.png"
+            alt="Facebook"
+          />
+          <img
+            src="https://img.icons8.com/ios-filled/50/mac-os.png"
+            alt="Mac"
+          />
+          <img
+            src="https://img.icons8.com/ios-filled/50/linkedin.png"
+            alt="LinkedIn"
+          />
         </div>
 
         <p className="login-link">

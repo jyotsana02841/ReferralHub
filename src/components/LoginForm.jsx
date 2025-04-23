@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios"; // Dummy API call
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./../styles/LoginForm.css";
 
 const LoginForm = () => {
@@ -9,31 +9,7 @@ const LoginForm = () => {
   const [magicEmail, setMagicEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError("");
-    setSuccess("");
-
-    if (!email || !password) {
-      setError("Please enter email and password.");
-      return;
-    }
-
-    try {
-      // Dummy API call
-      const response = await axios.post("https://dummyapi.io/login", {
-        email,
-        password,
-      });
-
-      console.log("Login successful:", response.data);
-      setSuccess("Logged in successfully!");
-    } catch (err) {
-      console.error("Login error:", err);
-      setError("Invalid credentials. Try again.");
-    }
-  };
+  const navigate = useNavigate();
 
   const handleMagicLink = async () => {
     setError("");
@@ -44,18 +20,29 @@ const LoginForm = () => {
       return;
     }
 
-    try {
-      // Dummy API for magic link
-      const response = await axios.post("https://dummyapi.io/magic-link", {
-        email: magicEmail,
-      });
-
-      console.log("Magic link sent:", response.data);
+    // Simulate magic link sent
+    setTimeout(() => {
+      console.log("Magic link sent to:", magicEmail);
       setSuccess("Magic link sent to your email!");
-    } catch (err) {
-      console.error("Magic link error:", err);
-      setError("Failed to send magic link.");
+    }, 1000);
+  };
+
+  const handleLogin = async () => {
+    setError("");
+    setSuccess("");
+
+    if (!email || !password) {
+      setError("Please enter both email and password.");
+      return;
     }
+
+    // Simulated login (accepts any credentials)
+    setTimeout(() => {
+      console.log("Login successful (mock):", email);
+      setSuccess("Login successful!");
+      localStorage.setItem("token", "mocked_token_123"); // Store a dummy token
+      navigate("/page"); // Redirect after login
+    }, 1000);
   };
 
   return (
@@ -78,7 +65,9 @@ const LoginForm = () => {
           </button>
         </div>
 
-        <div className="or-divider"><span>or</span></div>
+        <div className="or-divider">
+          <span>or</span>
+        </div>
 
         <div className="section">
           <label>Email</label>
@@ -107,15 +96,31 @@ const LoginForm = () => {
         </div>
 
         {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
-        {success && <p style={{ color: "green", marginTop: "10px" }}>{success}</p>}
+        {success && (
+          <p style={{ color: "green", marginTop: "10px" }}>{success}</p>
+        )}
 
-        <div className="or-divider"><span>or</span></div>
+        <div className="or-divider">
+          <span>or</span>
+        </div>
 
         <div className="social-icons">
-          <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" />
-          <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook" />
-          <img src="https://img.icons8.com/ios-filled/50/mac-os.png" alt="Mac" />
-          <img src="https://img.icons8.com/ios-filled/50/linkedin.png" alt="LinkedIn" />
+          <img
+            src="https://img.icons8.com/color/48/google-logo.png"
+            alt="Google"
+          />
+          <img
+            src="https://img.icons8.com/color/48/facebook-new.png"
+            alt="Facebook"
+          />
+          <img
+            src="https://img.icons8.com/ios-filled/50/mac-os.png"
+            alt="Mac"
+          />
+          <img
+            src="https://img.icons8.com/ios-filled/50/linkedin.png"
+            alt="LinkedIn"
+          />
         </div>
 
         <p className="register">

@@ -1,4 +1,6 @@
+// PlatformSetup.js
 import React, { useState } from "react";
+
 import PlatformSetup1 from "./PlatformSetup1.jsx";
 import PlatformSetup2 from "./PlatformSetup2.jsx";
 import PlatformSetup3 from "./PlatformSetup3.jsx";
@@ -11,14 +13,13 @@ import Payouts from "./Payouts.jsx";
 import Settings from "./Settings.jsx";
 import ChatPage from "./ChatPage.jsx";
 import LeadsDashboard from "./LeadsDashboard.jsx";
-import Login from "./LoginForm.jsx";
-import Register from "./RegisterForm.jsx";
 import AssistantLoginOptions from "./AssistantLoginOptions.jsx";
 import PlatformSetupContent from "./PlatformSetupContent.jsx";
 import "./../styles/PlatformSetup.css";
+import Sidebar from './Sidebar.jsx'
 
 function PlatformSetup() {
-  const [activePage, setActivePage] = useState("Login"); // Start with Login page
+  const [activePage, setActivePage] = useState("Platform Setup");
 
   const handleSidebarClick = (pageName) => {
     console.log("Clicked:", pageName);
@@ -26,13 +27,11 @@ function PlatformSetup() {
   };
 
   const renderPage = () => {
+    console.log("Rendering page:", activePage); // Debug log for activePage
+
     switch (activePage) {
-      case "Login":
-        return <Login onSwitchToRegister={() => setActivePage("Register")} />;
-      case "Register":
-        return <Register onSwitchToLogin={() => setActivePage("Login")} />;
-        case "Platform Setup":
-          return <PlatformSetupContent />;
+      case "Platform Setup":
+        return <PlatformSetupContent />;
       case "AI Agent":
         return <ChatPage />;
       case "Dashboard":
@@ -52,111 +51,18 @@ function PlatformSetup() {
       case "Assistant Access":
         return <AssistantLoginOptions />;
       default:
-        return <div>Welcome! Please select an option from the sidebar.</div>;
+        return <div>Welcome! Please select an option from the sidebar.</div>
     }
   };
-
 
   return (
     <div className="platform-setup-container">
       {/* Sidebar */}
-      <div className="sidebar">
-        <div
-          className={`sidebar-item ${activePage === "Login" ? "active" : ""}`}
-          onClick={() => handleSidebarClick("Login")}
-        >
-          Login
-        </div>
-        <div
-          className={`sidebar-item ${
-            activePage === "Register" ? "active" : ""
-          }`}
-          onClick={() => handleSidebarClick("Register")}
-        >
-          Register
-        </div>
-        <div
-          className={`sidebar-item ${
-            activePage === "Platform Setup" ? "active" : ""
-          }`}
-          onClick={() => handleSidebarClick("Platform Setup")}
-        >
-          Platform Setup
-        </div>
-        <div
-          className={`sidebar-item ${
-            activePage === "AI Agent" ? "active" : ""
-          }`}
-          onClick={() => handleSidebarClick("AI Agent")}
-        >
-          AI Agent
-        </div>
-        <div
-          className={`sidebar-item ${
-            activePage === "Dashboard" ? "active" : ""
-          }`}
-          onClick={() => handleSidebarClick("Dashboard")}
-        >
-          Dashboard
-        </div>
-        <div
-          className={`sidebar-item ${
-            activePage === "Campaign" ? "active" : ""
-          }`}
-          onClick={() => handleSidebarClick("Campaign")}
-        >
-          Campaign
-        </div>
-        <div
-          className={`sidebar-item ${
-            activePage === "Promoters" ? "active" : ""
-          }`}
-          onClick={() => handleSidebarClick("Promoters")}
-        >
-          Promoters
-        </div>
-        <div
-          className={`sidebar-item ${activePage === "Leads" ? "active" : ""}`}
-          onClick={() => handleSidebarClick("Leads")}
-        >
-          Leads
-        </div>
-        <div
-          className={`sidebar-item ${activePage === "Payouts" ? "active" : ""}`}
-          onClick={() => handleSidebarClick("Payouts")}
-        >
-          Payouts
-        </div>
-        <div
-          className={`sidebar-item ${
-            activePage === "Assistant Access" ? "active" : ""
-          }`}
-          onClick={() => handleSidebarClick("Assistant Access")}
-        >
-          Assistant Access
-        </div>
-
-        <div className="sidebar-bottom">
-          <div
-            className={`sidebar-item ${
-              activePage === "Settings" ? "active" : ""
-            }`}
-            onClick={() => handleSidebarClick("Settings")}
-          >
-            Settings
-          </div>
-          <div
-            className={`sidebar-item ${activePage === "Help" ? "active" : ""}`}
-            onClick={() => handleSidebarClick("Help")}
-          >
-            Help
-          </div>
-        </div>
-      </div>
+      <Sidebar activePage={activePage} handleSidebarClick={handleSidebarClick} />
 
       {/* Main Content */}
       <div className="main-content">
-        {/* Header - Hide for login/register */}
+        {/* Show header only if the page is not Login or Register */}
         {activePage !== "Login" && activePage !== "Register" && (
           <div className="header">
             <h2>{activePage}</h2>
